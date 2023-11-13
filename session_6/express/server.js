@@ -1,36 +1,41 @@
 const express = require("express");
 const app = express();
+
 const PORT = 3000;
 
-const player = {
+const players = {
   "lionel messi": {
-    "full name": "Lionel Andres Messi",
+    fullName: "Lionel Andres Messi",
     age: "36",
   },
   "cristiano ronaldo": {
-    "full name": "Cristiano Ronaldo Andres Messi",
+    fullName: "Cristiano Ronaldo Dos Santos Aveiro",
     age: "39",
   },
-  unkown: {
-    "full name": "unknown",
-    age: "unkown",
+  unknown: {
+    fullName: "unknown",
+    age: "unknown",
   },
 };
 
 app.get("/", (req, res) => {
-  // console.log("Hello from Express");
   res.sendFile(__dirname + "/index.html");
+});
+
+app.get("/about", (req, res) => {
+  res.sendFile(__dirname + "/about.html");
 });
 
 app.get("/api/:name", (req, res) => {
   const shortName = req.params.name.toLowerCase();
-  if (player[shortName]) {
-    res.json(player[shortName]);
+
+  if (players[shortName]) {
+    res.json(players[shortName]);
   } else {
-    res.json(player[unkown]);
+    res.json(players["unknown"]);
   }
 });
 
 app.listen(PORT, () => {
-  console.log(`Server is running on ${PORT} port`);
+  console.log(`Server is running on port ${PORT}`);
 });
