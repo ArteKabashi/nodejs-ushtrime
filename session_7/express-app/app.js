@@ -18,7 +18,7 @@ app.use("/", mainRoutes);
 app.use("/admin", adminRoutes.routes);
 
 app.use((req, res) => {
-  res.status(404).render(path.join(__dirname, "views", "404.ejs"));
+  res.status(404).render("404");
 });
 
 app.listen(PORT, (error) => {

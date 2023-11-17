@@ -7,7 +7,11 @@ const adminRoutes = require("./adminRoutes");
 router.get("/", (req, res) => {
   console.log(adminRoutes.products);
   console.log(adminRoutes.firstName);
-  res.render("index");
+  res.render("index", {
+    title: "Home",
+    productName: "Coca-Cola",
+    productPrice: "1.29",
+  });
 });
 
 router.get("/about", (req, res) => {
