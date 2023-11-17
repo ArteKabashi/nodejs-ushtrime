@@ -5,8 +5,12 @@ const path = require("path");
 
 const products = [];
 
+router.get("/", (req, res) => {
+  res.write("<h1>admin route</h1>");
+});
+
 router.get("/add-product", (req, res) => {
-  res.sendFile(path.join(__dirname, "..", "views", "add-product.html"));
+  res.render("add-product");
 });
 
 router.post("/product", (req, res) => {
@@ -14,6 +18,5 @@ router.post("/product", (req, res) => {
   res.redirect("/admin/add-product");
 });
 
-// module.exports = router;
 exports.routes = router;
 exports.products = products;

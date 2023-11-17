@@ -1,13 +1,17 @@
 const express = require("express");
 const router = express.Router();
+const path = require("path");
 
 const adminRoutes = require("./adminRoutes");
 
-const path = require("path");
-
 router.get("/", (req, res) => {
   console.log(adminRoutes.products);
-  res.render(path.join(__dirname, "..", "views", "index.ejs"));
+  console.log(adminRoutes.firstName);
+  res.render("index");
+});
+
+router.get("/about", (req, res) => {
+  res.render("about");
 });
 
 module.exports = router;
