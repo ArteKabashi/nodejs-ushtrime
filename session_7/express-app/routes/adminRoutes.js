@@ -10,11 +10,12 @@ router.get("/", (req, res) => {
 });
 
 router.get("/add-product", (req, res) => {
-  res.render("add-product");
+  res.render("add-product", { title: "Add Product" });
 });
 
 router.post("/product", (req, res) => {
-  products.push(req.body.product);
+  console.log(req.body);
+  products.push(req.body);
   res.redirect("/admin/add-product");
 });
 

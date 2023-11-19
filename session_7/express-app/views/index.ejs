@@ -6,10 +6,10 @@
     <h1>This is the homepage</h1>
     <main>
       <section class="products-list">
-        <% for (let i=0;i<10;i++){%>
+        <% for (let i=0;i<products.length;i++){%>
         <article class="product">
-          <p class="product-name"><%= productName %></p>
-          <span class="product-price"><%= productPrice %></span>
+          <p class="product-name"><%= products[i].productName %></p>
+          <span class="product-price"><%= products[i].productPrice %></span>
         </article>
         <% } %>
       </section>

@@ -5,17 +5,17 @@ const path = require("path");
 const adminRoutes = require("./adminRoutes");
 
 router.get("/", (req, res) => {
-  console.log(adminRoutes.products);
+  const products = adminRoutes.products;
+  console.log(products);
   console.log(adminRoutes.firstName);
   res.render("index", {
     title: "Home",
-    productName: "Coca-Cola",
-    productPrice: "1.29",
+    products: products,
   });
 });
 
 router.get("/about", (req, res) => {
-  res.render("about");
+  res.render("about", { title: "About" });
 });
 
 module.exports = router;
