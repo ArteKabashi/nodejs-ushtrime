@@ -2,20 +2,11 @@ const express = require("express");
 const router = express.Router();
 const path = require("path");
 
-const adminRoutes = require("./adminRoutes");
+const mainController = require("../controllers/mainController")
 
-router.get("/", (req, res) => {
-  const products = adminRoutes.products;
-  console.log(products);
-  console.log(adminRoutes.firstName);
-  res.render("index", {
-    title: "Home",
-    products: products,
-  });
-});
 
-router.get("/about", (req, res) => {
-  res.render("about", { title: "About" });
-});
+router.get("/", mainController.getHomeView);
+
+router.get("/about", mainController.getAboutView);
 
 module.exports = router;
