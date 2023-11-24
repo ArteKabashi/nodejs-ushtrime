@@ -31,6 +31,14 @@ addProductView : (req, res) => {
   res.redirect("/admin/add-product");
    }).catch(err => console.log(err))
 
+},
+
+deleteProduct : (req,res)=>{
+  prodId = req.body.productId
+  Product.findByIdAndDelete(prodId)
+  .then(result => {
+    res.redirect("/")
+  })
 }
 
 }

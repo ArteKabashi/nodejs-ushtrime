@@ -13,6 +13,11 @@
                             onerror="this.src='/images/image-not-found.png'"/>
                         <span class="product-description"> <%= resultProduct.description %></span>
                         <span class="product-category"><%= resultProduct.category %></span>
+
+                        <form action="/admin/delete-product" method="post">
+                            <input type="hidden" value="<%=resultProduct._id%>" name="productId">
+                            <button>Delete</button>
+                        </form>
                     </article>
             </section>
         </main>
