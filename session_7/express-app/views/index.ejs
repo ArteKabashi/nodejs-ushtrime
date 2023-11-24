@@ -8,10 +8,15 @@
     <main>
       <section class="products-list">
         <% for (let i=0;i<products.length;i++){%>
-        <article class="product">
-          <p class="product-name"><%= products[i].productName %></p>
-          <span class="product-price"><%= products[i].productPrice %></span>
-        </article>
+    <article class="product">
+      <p class="product-name">Name: <%= products[i].name %></p>
+      <span class="product-price">Price: <%= products[i].price %></span>
+      <img class="product-image" src="<%= products[i].imageUrl %>" alt="<%= products[i].name %>"
+       onerror="this.src='/images/image-not-found.png'" />
+      <span class="product-description">Description: <%= products[i].description %></span>
+      <span class="product-category">Category: <%= products[i].category %></span>
+      <a class="product-category" href="/product-details/<%= products[i]._id %>">See details</details></a>
+    </article>
         <% } %>
       </section>
     </main>

@@ -10,4 +10,4 @@ router.get("/add-product", adminControllers.addProductView);
 
 router.post("/product",adminControllers.createProduct);
 
-exports.routes = router;
+module.exports = router;

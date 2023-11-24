@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("./partials/head.ejs") %>
+    </head>
+    <body>
+        <%- include("./partials/nav.ejs") %>
+        <main>
+            <section class="products-list">
+                    <article class="product">
+                        <p class="product-name"> <%= resultProduct.name %> </p>
+                        <span class="product-price"> <%= resultProduct.price %></span>
+                        <img class="product-image" src="<%= resultProduct.imageUrl %>" alt="<%= resultProduct.name %>"
+                            onerror="this.src='/images/image-not-found.png'"/>
+                        <span class="product-description"> <%= resultProduct.description %></span>
+                        <span class="product-category"><%= resultProduct.category %></span>
+                    </article>
+            </section>
+        </main>
+    
+</body>
+</html>

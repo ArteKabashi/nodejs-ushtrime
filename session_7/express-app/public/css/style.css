@@ -104,3 +104,20 @@ h1 {
 .product-price {
   font-size: 18px;
 }
+
+.product-description {
+  font-size: 18px;
+    display: block;
+}
+
+.product-category {
+  font-size: 18px;
+  display: block;
+}
+
+.product-image {
+  width: 130px;
+  height: 130px;
+  display: block;
+  margin-bottom: 10px;
+}
